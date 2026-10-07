@@ -2,13 +2,15 @@
 
 [Agenvas](https://github.com/grayrepo-byte/Agenvas) 的产品落地页，纯静态站点，托管在 GitHub Pages。
 
-- 线上地址：https://grayrepo-byte.github.io/AgenvasPages/
+- 线上地址：https://agenvas.com/
+- 备用地址：https://grayrepo-byte.github.io/AgenvasPages/（设置自定义域名后会重定向到主域名）
 - 原项目仓库：https://github.com/grayrepo-byte/Agenvas
 
 ## 结构
 
 ```
 index.html                      单页站点
+CNAME                           GitHub Pages 自定义域名
 assets/css/styles.css           设计令牌与全部样式
 assets/js/main.js               交互增强（滚动揭示、复制、标签页、画布连线、背景动效）
 assets/img/                     品牌图标与公众号二维码
