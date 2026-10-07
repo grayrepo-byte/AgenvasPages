@@ -1,0 +1,1292 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8" />
+    <script>
+      document.documentElement.classList.add("js");
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Agenvas — 可自托管的 AI 创作画布</title>
+    <meta
+      name="description"
+      content="Agenvas 是开源的、可自托管的 AI 创作画布：文字、图片、视频、音频与 Agent 同处一个工作空间。一条命令完成部署，兼容 OpenAI 端点、ComfyUI 与 RunningHub，MIT 许可。"
+    />
+    <meta name="theme-color" content="#0f172a" />
+    <meta name="color-scheme" content="dark" />
+    <link rel="canonical" href="https://grayrepo-byte.github.io/AgenvasPages/" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Agenvas" />
+    <meta property="og:title" content="Agenvas — 可自托管的 AI 创作画布" />
+    <meta
+      property="og:description"
+      content="文字、图片、视频、音频与 Agent，同处一个无限画布。一条命令完成部署，MIT 许可，把创作成本的选择权留在自己手里。"
+    />
+    <meta
+      property="og:url"
+      content="https://grayrepo-byte.github.io/AgenvasPages/"
+    />
+    <meta
+      property="og:image"
+      content="https://grayrepo-byte.github.io/AgenvasPages/assets/img/agenvas-favicon.png"
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <link rel="icon" href="assets/img/agenvas-favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="assets/img/agenvas-favicon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500;600;700&display=swap"
+    />
+    <link rel="stylesheet" href="assets/css/styles.css" />
+  </head>
+
+  <body>
+    <a class="skip-link" href="#main">跳到主要内容</a>
+
+    <!-- Icon sprite -->
+    <svg
+      aria-hidden="true"
+      focusable="false"
+      style="position: absolute; width: 0; height: 0; overflow: hidden"
+    >
+      <defs>
+        <symbol id="i-github" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"
+          />
+        </symbol>
+        <symbol id="i-x" viewBox="0 0 24 24">
+          <path
+            fill="currentColor"
+            d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"
+          />
+        </symbol>
+
+        <symbol
+          id="i-arrow"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M5 12h14" />
+          <path d="m12 5 7 7-7 7" />
+        </symbol>
+        <symbol
+          id="i-copy"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="9" y="9" width="12" height="12" rx="2" />
+          <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
+        </symbol>
+        <symbol
+          id="i-check"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M20 6 9 17l-5-5" />
+        </symbol>
+        <symbol
+          id="i-terminal"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m4 17 6-6-6-6" />
+          <path d="M12 19h8" />
+        </symbol>
+        <symbol
+          id="i-canvas"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <path d="M3 9h18" />
+          <path d="M9 21V9" />
+        </symbol>
+        <symbol
+          id="i-text"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M4 7V5h16v2" />
+          <path d="M12 5v14" />
+          <path d="M9 19h6" />
+        </symbol>
+        <symbol
+          id="i-image"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="3" y="3" width="18" height="18" rx="2" />
+          <circle cx="9" cy="9" r="1.6" />
+          <path d="m21 15-4.5-4.5L7 20" />
+        </symbol>
+        <symbol
+          id="i-video"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="6" width="13" height="12" rx="2" />
+          <path d="m22 8-7 4 7 4z" />
+        </symbol>
+        <symbol
+          id="i-audio"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 18V5l11-2v13" />
+          <circle cx="6" cy="18" r="3" />
+          <circle cx="17" cy="16" r="3" />
+        </symbol>
+        <symbol
+          id="i-agent"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="4" y="8" width="16" height="12" rx="3" />
+          <path d="M12 4v4" />
+          <path d="M9 14h.01M15 14h.01" />
+        </symbol>
+        <symbol
+          id="i-layers"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m12 2 9 5-9 5-9-5 9-5Z" />
+          <path d="m3 12 9 5 9-5" />
+          <path d="m3 17 9 5 9-5" />
+        </symbol>
+        <symbol
+          id="i-plug"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M9 2v6M15 2v6" />
+          <path d="M6 8h12v3a6 6 0 0 1-12 0z" />
+          <path d="M12 17v5" />
+        </symbol>
+        <symbol
+          id="i-crop"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M6 2v14a2 2 0 0 0 2 2h14" />
+          <path d="M18 22V8a2 2 0 0 0-2-2H2" />
+        </symbol>
+        <symbol
+          id="i-server"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="2" y="3" width="20" height="8" rx="2" />
+          <rect x="2" y="13" width="20" height="8" rx="2" />
+          <path d="M6 7h.01M6 17h.01" />
+        </symbol>
+        <symbol
+          id="i-shield"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z" />
+          <path d="m9 12 2 2 4-4" />
+        </symbol>
+        <symbol
+          id="i-globe"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <circle cx="12" cy="12" r="9" />
+          <path d="M3 12h18" />
+          <path d="M12 3a14 14 0 0 1 0 18 14 14 0 0 1 0-18Z" />
+        </symbol>
+        <symbol
+          id="i-box"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m21 8-9 5-9-5" />
+          <path d="M3 8v8l9 5 9-5V8l-9-5Z" />
+        </symbol>
+        <symbol
+          id="i-db"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <ellipse cx="12" cy="5" rx="8" ry="3" />
+          <path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5" />
+          <path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3" />
+        </symbol>
+        <symbol
+          id="i-alert"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="M12 9v4" />
+          <path d="M12 17h.01" />
+          <path
+            d="M10.29 3.86 1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0Z"
+          />
+        </symbol>
+        <symbol
+          id="i-cpu"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <rect x="5" y="5" width="14" height="14" rx="2" />
+          <rect x="9" y="9" width="6" height="6" rx="1" />
+          <path
+            d="M9 2v3M15 2v3M9 19v3M15 19v3M2 9h3M2 15h3M19 9h3M19 15h3"
+          />
+        </symbol>
+        <symbol
+          id="i-code"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path d="m9 18-6-6 6-6" />
+          <path d="m15 6 6 6-6 6" />
+        </symbol>
+      </defs>
+    </svg>
+
+    <header class="nav" id="nav">
+      <nav class="nav__inner" aria-label="主导航">
+        <a class="brand" href="#top">
+          <img
+            src="assets/img/agenvas-favicon.png"
+            alt=""
+            width="30"
+            height="30"
+          />
+          <span>Agenvas</span>
+        </a>
+        <div class="nav__links">
+          <a href="#preview">产品预览</a>
+          <a href="#features">核心功能</a>
+          <a href="#quickstart">快速开始</a>
+          <a href="#stack">技术栈</a>
+        </div>
+        <div class="nav__actions">
+          <a
+            class="btn btn--github btn--sm"
+            href="https://github.com/grayrepo-byte/Agenvas"
+            target="_blank"
+            rel="noopener"
+          >
+            <svg width="16" height="16" aria-hidden="true">
+              <use href="#i-github"></use>
+            </svg>
+            GitHub
+          </a>
+          <a class="btn btn--primary btn--sm" href="#quickstart">快速开始</a>
+        </div>
+      </nav>
+    </header>
+
+    <main id="main" tabindex="-1">
+      <!-- ================= Hero ================= -->
+      <section class="hero" id="top">
+        <canvas id="hero-canvas" aria-hidden="true"></canvas>
+        <div class="container">
+          <div class="hero__head">
+            <p class="hero__badge">
+              <span class="dot" aria-hidden="true"></span>
+              MIT 开源 · 可自托管 · 单管理员部署
+            </p>
+
+            <h1>可自托管的<br /><span class="accent">AI 创作画布</span></h1>
+
+            <p class="lede">
+              文字、图片、视频、音频与 Agent，同处一个无限画布。用最低的代价获得商业画布的体验
+              —— 不必绑定昂贵的会员，也不必追逐最顶尖的模型，把选择权留在自己手里。
+            </p>
+
+            <div class="btn-row hero__cta">
+              <a
+                class="btn btn--primary btn--lg"
+                href="https://github.com/grayrepo-byte/Agenvas"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg width="19" height="19" aria-hidden="true">
+                  <use href="#i-github"></use>
+                </svg>
+                在 GitHub 上查看
+              </a>
+              <a class="btn btn--ghost btn--lg" href="#quickstart">
+                一键部署
+                <svg width="17" height="17" aria-hidden="true">
+                  <use href="#i-arrow"></use>
+                </svg>
+              </a>
+            </div>
+
+            <div class="term">
+              <div class="term__head">
+                <span class="term__dots" aria-hidden="true">
+                  <span></span><span></span><span></span>
+                </span>
+                <span class="term__label">macOS / Linux · Docker Compose v2</span>
+                <button class="term__copy" type="button" data-copy>
+                  <svg width="12" height="12" aria-hidden="true">
+                    <use href="#i-copy"></use>
+                  </svg>
+                  <span data-copy-label>复制</span>
+                </button>
+              </div>
+              <div class="term__body">
+                <pre><span class="prompt" aria-hidden="true">$ </span><span class="cmd">mkdir agenvas &amp;&amp; cd agenvas &amp;&amp; \
+  curl -fL https://raw.githubusercontent.com/grayrepo-byte/Agenvas/main/docker-compose.yml \
+    -o docker-compose.yml &amp;&amp; \
+  docker compose up -d --wait</span></pre>
+              </div>
+              <p class="term__foot">
+                启动完成后打开 <code>http://127.0.0.1:8088/setup</code> 创建管理员账号。
+                数据库密码与凭证密钥首次启动时自动生成，无需填写。
+              </p>
+            </div>
+          </div>
+
+          <ul class="facts facts--center">
+            <li class="fact">
+              <span class="fact__value">4</span>
+              <span class="fact__label">种界面语言</span>
+            </li>
+            <li class="fact">
+              <span class="fact__value">6</span>
+              <span class="fact__label">类媒体适配器</span>
+            </li>
+            <li class="fact">
+              <span class="fact__value">1</span>
+              <span class="fact__label">条命令完成部署</span>
+            </li>
+            <li class="fact">
+              <span class="fact__value">MIT</span>
+              <span class="fact__label">开源许可</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <!-- ================= Preview ================= -->
+      <section class="section section--tight" id="preview">
+        <div class="container">
+          <div class="section-head section-head--center">
+            <span class="eyebrow">产品预览</span>
+            <h2>一张画布，跑完整个创作流程</h2>
+            <p class="lede">
+              每个素材都是一张卡片。拖拽、框选、连线与自动整理，让文字、图片、视频、音频和
+              Agent 在同一张画布上互相引用。
+            </p>
+          </div>
+
+          <div
+            class="stage"
+            role="img"
+            aria-label="Agenvas 画布界面示意：提示词卡片派生文字卡片与图片卡片，Agent 读取绑定上下文并提交媒体提案，经用户批准后生成音频与视频。卡片之间以连线互相引用。"
+          >
+            <div class="stage__chrome" aria-hidden="true">
+              <span class="term__dots">
+                <span></span><span></span><span></span>
+              </span>
+              <span class="stage__title">画布 · 短剧项目</span>
+              <span class="stage__chip">自动整理已开启</span>
+            </div>
+
+            <svg class="stage__links" id="stage-links" aria-hidden="true"></svg>
+
+            <div class="node node--prompt">
+              <div class="node__head">
+                <svg aria-hidden="true"><use href="#i-terminal"></use></svg>
+                <span class="node__name">提示词</span>
+                <span class="node__status" aria-hidden="true"></span>
+              </div>
+              <div class="node__body">
+                <div class="lines">
+                  <span class="line line--accent"></span>
+                  <span class="line"></span>
+                  <span class="line" style="width: 68%"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="node node--text">
+              <div class="node__head">
+                <svg aria-hidden="true"><use href="#i-text"></use></svg>
+                <span class="node__name">文字卡片</span>
+                <span class="node__status node__status--run" aria-hidden="true"></span>
+              </div>
+              <div class="node__body">
+                <div class="lines">
+                  <span class="line"></span>
+                  <span class="line"></span>
+                  <span class="line" style="width: 84%"></span>
+                  <span class="line" style="width: 52%"></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="node node--image">
+              <div class="node__head">
+                <svg aria-hidden="true"><use href="#i-image"></use></svg>
+                <span class="node__name">图片卡片</span>
+                <span class="node__meta">· 2 个版本</span>
+                <span class="node__status" aria-hidden="true"></span>
+              </div>
+              <div class="node__body">
+                <div class="thumb"></div>
+              </div>
+            </div>
+
+            <div class="node node--agent">
+              <div class="node__head">
+                <svg aria-hidden="true"><use href="#i-agent"></use></svg>
+                <span class="node__name">Agent</span>
+                <span class="node__meta">· 已绑定上下文</span>
+                <span class="node__status node__status--run" aria-hidden="true"></span>
+              </div>
+              <div class="node__body">
+                <span class="bubble bubble--user"
+                  >把开场镜头改成黄昏，并配一段旁白。</span
+                >
+                <span class="bubble bubble--agent"
+                  >已准备 2 张图片与 1 段音频提案，等待你的批准。</span
+                >
+                <div class="approve" aria-hidden="true">
+                  <span class="ok">批准</span>
+                  <span class="no">拒绝</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="node node--audio">
+              <div class="node__head">
+                <svg aria-hidden="true"><use href="#i-audio"></use></svg>
+                <span class="node__name">音频卡片</span>
+                <span class="node__status node__status--run" aria-hidden="true"></span>
+              </div>
+              <div class="node__body">
+                <div class="wave" aria-hidden="true">
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                  <i></i><i></i><i></i><i></i><i></i><i></i>
+                </div>
+              </div>
+            </div>
+
+            <div class="node node--video">
+              <div class="node__head">
+                <svg aria-hidden="true"><use href="#i-video"></use></svg>
+                <span class="node__name">视频卡片</span>
+                <span class="node__status" aria-hidden="true"></span>
+              </div>
+              <div class="node__body">
+                <div class="thumb thumb--video">
+                  <div class="play" aria-hidden="true"><span></span></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <p class="stage-caption">
+            界面示意：提示词卡片派生文字与图片，Agent 读取绑定上下文并提交媒体提案，批准后生成音频与视频。
+          </p>
+        </div>
+      </section>
+
+      <!-- ================= Features ================= -->
+      <section class="section" id="features">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">核心功能</span>
+            <h2>从灵感到成品，画布承担全部环节</h2>
+            <p class="lede">
+              生成、复用、编辑与审批都发生在同一张画布上，不需要在多个工具之间搬运素材。
+            </p>
+          </div>
+
+          <div class="grid grid--3">
+            <article class="card reveal">
+              <div class="card__icon">
+                <svg aria-hidden="true"><use href="#i-canvas"></use></svg>
+              </div>
+              <h3>画布创作</h3>
+              <p>
+                拖拽、框选、连线与自动整理，支持上传本地媒体，卡片关系一目了然。
+              </p>
+            </article>
+
+            <article class="card reveal" style="--delay: 60ms">
+              <div class="card__icon">
+                <svg aria-hidden="true"><use href="#i-layers"></use></svg>
+              </div>
+              <h3>多模态生成</h3>
+              <p>
+                文字、图片、视频、音频逐卡片运行，支持排队、取消、重新生成与历史版本。
+              </p>
+            </article>
+
+            <article class="card reveal" style="--delay: 120ms">
+              <div class="card__icon">
+                <svg aria-hidden="true"><use href="#i-agent"></use></svg>
+              </div>
+              <h3>Agent 协作</h3>
+              <p>
+                读取绑定上下文、编辑文字、摆放卡片；媒体生成提案经你批准后才执行。
+              </p>
+            </article>
+
+            <article class="card reveal">
+              <div class="card__icon">
+                <svg aria-hidden="true"><use href="#i-plug"></use></svg>
+              </div>
+              <h3>素材复用</h3>
+              <p>
+                项目资源、个人资产库、提示词模板、媒体风格与混合参考输入，一次沉淀处处可用。
+              </p>
+            </article>
+
+            <article class="card reveal" style="--delay: 60ms">
+              <div class="card__icon">
+                <svg aria-hidden="true"><use href="#i-crop"></use></svg>
+              </div>
+              <h3>图片处理</h3>
+              <p>
+                标注、裁剪、旋转、镜像、放大、深度提取，以及配置能力支持的 AI 编辑。
+              </p>
+            </article>
+
+            <article class="card reveal" style="--delay: 120ms">
+              <div class="card__icon">
+                <svg aria-hidden="true"><use href="#i-server"></use></svg>
+              </div>
+              <h3>自托管管理</h3>
+              <p>
+                模型配置、本地及 OSS / COS / S3 存储、任务与调用记录、项目清单导出。
+              </p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Workflow ================= -->
+      <section class="section" id="workflow">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">创作流程</span>
+            <h2>五种能力，落在同一套卡片上</h2>
+            <p class="lede">
+              可用操作取决于管理员在后台发布的能力，界面支持中文、英文、俄文和日文。
+            </p>
+          </div>
+
+          <div class="modality reveal">
+            <div class="modality__title">
+              <svg aria-hidden="true"><use href="#i-text"></use></svg>
+              文字
+            </div>
+            <div>
+              <p>
+                接入任意 OpenAI 兼容端点，逐卡片生成与改写。结果可选用、可重新生成，历史版本随时回看。
+              </p>
+              <div class="tags">
+                <span class="tag tag--accent">OpenAI 兼容端点</span>
+                <span class="tag">自定义模型 ID</span>
+                <span class="tag">历史版本</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modality reveal">
+            <div class="modality__title">
+              <svg aria-hidden="true"><use href="#i-image"></use></svg>
+              图片
+            </div>
+            <div>
+              <p>
+                生成后可继续在画布内处理：标注、裁剪、旋转、镜像、放大与深度提取，也可以直接上传本地素材。
+              </p>
+              <div class="tags">
+                <span class="tag tag--accent">GPT Image</span>
+                <span class="tag tag--accent">Google Nano Banana</span>
+                <span class="tag">ComfyUI 工作流</span>
+                <span class="tag">混合参考输入</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modality reveal">
+            <div class="modality__title">
+              <svg aria-hidden="true"><use href="#i-video"></use></svg>
+              视频
+            </div>
+            <div>
+              <p>
+                以图片或文字为起点生成视频，支持参考媒体。结果未知（UNKNOWN）时需显式重试，避免误判为已完成。
+              </p>
+              <div class="tags">
+                <span class="tag tag--accent">火山方舟 Seedance</span>
+                <span class="tag tag--accent">RunningHub V2</span>
+                <span class="tag">媒体中继</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modality reveal">
+            <div class="modality__title">
+              <svg aria-hidden="true"><use href="#i-audio"></use></svg>
+              音频
+            </div>
+            <div>
+              <p>
+                语音与音效逐卡片生成，可直接引用画布上的文字与图片作为参考输入，与视频卡片组合使用。
+              </p>
+              <div class="tags">
+                <span class="tag tag--accent">Seed Audio</span>
+                <span class="tag">参考音频</span>
+                <span class="tag">逐卡片运行</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="modality reveal">
+            <div class="modality__title">
+              <svg aria-hidden="true"><use href="#i-agent"></use></svg>
+              Agent
+            </div>
+            <div>
+              <p>
+                读取绑定上下文、编辑文字、摆放卡片；媒体生成提案统一在对话中批准或拒绝。使用前管理员需运行工具调用诊断。
+              </p>
+              <div class="tags">
+                <span class="tag tag--accent">上下文绑定</span>
+                <span class="tag tag--accent">提案审批</span>
+                <span class="tag">Skill 配置</span>
+                <span class="tag">多轮对话</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Integrations ================= -->
+      <section class="section" id="integrations">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">生态对接</span>
+            <h2>用你手上的模型，跑你熟悉的流程</h2>
+            <p class="lede">
+              适配器与工作流都由管理员在后台发布，用户侧看到的可用操作与之保持一致。
+            </p>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-col reveal">
+              <h3>语言模型</h3>
+              <ul>
+                <li>任意 OpenAI 兼容端点</li>
+                <li>自定义模型 ID 与 API Key</li>
+                <li>工具调用诊断，验证 Agent 可用性</li>
+              </ul>
+            </div>
+
+            <div class="stack-col reveal" style="--delay: 60ms">
+              <h3>媒体适配器</h3>
+              <ul>
+                <li>GPT Image · Google Nano Banana</li>
+                <li>火山方舟 Seedance · Seed Audio</li>
+                <li>媒体中继，支撑需要公网访问的参考素材</li>
+              </ul>
+            </div>
+
+            <div class="stack-col reveal" style="--delay: 120ms">
+              <h3>工作流引擎</h3>
+              <ul>
+                <li>ComfyUI：导入并映射已发布的 API 工作流</li>
+                <li>RunningHub V2 工作流与 AI 应用</li>
+                <li>可用操作随管理员发布的能力变化</li>
+              </ul>
+            </div>
+
+            <div class="stack-col reveal">
+              <h3>存储与凭证</h3>
+              <ul>
+                <li>本地存储，或对接 OSS / COS / S3</li>
+                <li>API Key 加密保存，密钥不写入日志</li>
+                <li>数据库密码与主密钥自动生成并持久化</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Quick start ================= -->
+      <section class="section" id="quickstart">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">快速开始</span>
+            <h2>三步，跑起你自己的画布</h2>
+            <p class="lede">
+              启动和登录无需 Git、本地编译环境、GPU、<code class="mono">.env</code>
+              或模型 Key。只需装好 Docker Engine / Docker Desktop，并确认包含 Docker Compose v2。
+            </p>
+          </div>
+
+          <div class="steps">
+            <div class="step reveal">
+              <div class="step__num" aria-hidden="true">01</div>
+              <div>
+                <h3>一键启动</h3>
+                <p>选择你的系统，复制整段命令执行。</p>
+
+                <div class="tabs" role="tablist" aria-label="选择操作系统">
+                  <button
+                    class="tab"
+                    role="tab"
+                    id="tab-unix"
+                    aria-controls="panel-unix"
+                    aria-selected="true"
+                  >
+                    macOS / Linux
+                  </button>
+                  <button
+                    class="tab"
+                    role="tab"
+                    id="tab-cmd"
+                    aria-controls="panel-cmd"
+                    aria-selected="false"
+                    tabindex="-1"
+                  >
+                    Windows CMD
+                  </button>
+                  <button
+                    class="tab"
+                    role="tab"
+                    id="tab-ps"
+                    aria-controls="panel-ps"
+                    aria-selected="false"
+                    tabindex="-1"
+                  >
+                    PowerShell
+                  </button>
+                </div>
+
+                <div
+                  class="term"
+                  id="panel-unix"
+                  role="tabpanel"
+                  aria-labelledby="tab-unix"
+                  tabindex="0"
+                >
+                  <div class="term__head">
+                    <span class="term__dots" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </span>
+                    <span class="term__label">终端</span>
+                    <button class="term__copy" type="button" data-copy>
+                      <svg width="12" height="12" aria-hidden="true">
+                        <use href="#i-copy"></use>
+                      </svg>
+                      <span data-copy-label>复制</span>
+                    </button>
+                  </div>
+                  <div class="term__body">
+                    <pre><span class="prompt" aria-hidden="true">$ </span><span class="cmd">mkdir agenvas &amp;&amp; cd agenvas &amp;&amp; \
+  curl -fL https://raw.githubusercontent.com/grayrepo-byte/Agenvas/main/docker-compose.yml \
+    -o docker-compose.yml &amp;&amp; \
+  docker compose up -d --wait</span></pre>
+                  </div>
+                </div>
+
+                <div
+                  class="term"
+                  id="panel-cmd"
+                  role="tabpanel"
+                  aria-labelledby="tab-cmd"
+                  tabindex="0"
+                  hidden
+                >
+                  <div class="term__head">
+                    <span class="term__dots" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </span>
+                    <span class="term__label">命令提示符</span>
+                    <button class="term__copy" type="button" data-copy>
+                      <svg width="12" height="12" aria-hidden="true">
+                        <use href="#i-copy"></use>
+                      </svg>
+                      <span data-copy-label>复制</span>
+                    </button>
+                  </div>
+                  <div class="term__body">
+                    <pre><span class="prompt" aria-hidden="true">&gt; </span><span class="cmd">mkdir agenvas &amp;&amp; cd agenvas &amp;&amp; ^
+  curl.exe -fL https://raw.githubusercontent.com/grayrepo-byte/Agenvas/main/docker-compose.yml -o docker-compose.yml &amp;&amp; ^
+  docker compose up -d --wait</span></pre>
+                  </div>
+                </div>
+
+                <div
+                  class="term"
+                  id="panel-ps"
+                  role="tabpanel"
+                  aria-labelledby="tab-ps"
+                  tabindex="0"
+                  hidden
+                >
+                  <div class="term__head">
+                    <span class="term__dots" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </span>
+                    <span class="term__label">PowerShell 5.1 / 7</span>
+                    <button class="term__copy" type="button" data-copy>
+                      <svg width="12" height="12" aria-hidden="true">
+                        <use href="#i-copy"></use>
+                      </svg>
+                      <span data-copy-label>复制</span>
+                    </button>
+                  </div>
+                  <div class="term__body">
+                    <pre><span class="prompt" aria-hidden="true">&gt; </span><span class="cmd">&amp; {
+  $ErrorActionPreference = 'Stop'
+  New-Item -ItemType Directory -Path agenvas | Out-Null
+  Set-Location agenvas
+  Invoke-WebRequest -UseBasicParsing `
+    -Uri 'https://raw.githubusercontent.com/grayrepo-byte/Agenvas/main/docker-compose.yml' `
+    -OutFile docker-compose.yml
+  docker compose up -d --wait
+}</span></pre>
+                  </div>
+                </div>
+
+                <div class="note">
+                  <svg aria-hidden="true"><use href="#i-alert"></use></svg>
+                  <p>
+                    这一步会准备 <code class="mono">agenvas</code> 目录、拉取镜像，并等待
+                    Web、API 与 PostgreSQL 三个服务健康。首次下载镜像可能需要几分钟，请保留该目录以便后续维护。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step__num" aria-hidden="true">02</div>
+              <div>
+                <h3>创建管理员</h3>
+                <p>
+                  本机打开
+                  <a class="accent mono" href="http://127.0.0.1:8088/setup"
+                    >http://127.0.0.1:8088/setup</a
+                  >；从其他设备访问时使用
+                  <code class="mono">http://&lt;服务器IP&gt;:8088/setup</code>。填写管理员登录名和密码后即可登录。
+                </p>
+                <div class="note">
+                  <svg aria-hidden="true"><use href="#i-shield"></use></svg>
+                  <p>
+                    初始化状态永久记录在数据库中，重启或停用管理员都不会重新开放。
+                    请先在受控网络完成初始化，再开放公网访问。
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="step reveal">
+              <div class="step__num" aria-hidden="true">03</div>
+              <div>
+                <h3>配置模型，开始创作</h3>
+                <p>
+                  在「设置 → 模型配置」添加 OpenAI 兼容端点的模型 ID 与 API Key；
+                  在「媒体配置」创建连接、发布能力并设置默认模型。随后创建项目，通过画布右键菜单添加卡片或上传素材。
+                </p>
+                <div class="term">
+                  <div class="term__head">
+                    <span class="term__dots" aria-hidden="true">
+                      <span></span><span></span><span></span>
+                    </span>
+                    <span class="term__label">日常维护</span>
+                  </div>
+                  <div class="term__body">
+                    <pre><span class="prompt" aria-hidden="true">$ </span><span class="cmd">docker compose up -d --wait   <span class="term__label"># 启动或更新</span>
+docker compose ps             <span class="term__label"># 查看服务状态</span>
+docker compose down           <span class="term__label"># 停止并保留数据</span></span></pre>
+                  </div>
+                </div>
+                <div class="note">
+                  <svg aria-hidden="true"><use href="#i-alert"></use></svg>
+                  <p>
+                    更新前请备份数据库、媒体、配置与加密密钥。
+                    <strong>不要执行 <code class="mono">docker compose down -v</code></strong>，它会删除数据和密钥。
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= Stack ================= -->
+      <section class="section" id="stack">
+        <div class="container">
+          <div class="section-head">
+            <span class="eyebrow">技术栈</span>
+            <h2>常见的工具，透明的实现</h2>
+            <p class="lede">
+              工具链基线：JDK 21、Node 24 LTS（24.12+）、pnpm。完整版本见仓库的依赖基线文档。
+            </p>
+          </div>
+
+          <div class="stack-grid">
+            <div class="stack-col reveal">
+              <h3>前端</h3>
+              <ul>
+                <li>Vite · React · TypeScript</li>
+                <li>React Flow：画布与连线交互</li>
+                <li>TanStack Query · Zustand</li>
+              </ul>
+            </div>
+
+            <div class="stack-col reveal" style="--delay: 60ms">
+              <h3>后端</h3>
+              <ul>
+                <li>Java 21 · Spring Boot</li>
+                <li>Spring AI：模型与 Agent 运行时</li>
+                <li>jOOQ：类型安全的数据库访问</li>
+              </ul>
+            </div>
+
+            <div class="stack-col reveal" style="--delay: 120ms">
+              <h3>数据与部署</h3>
+              <ul>
+                <li>PostgreSQL · Flyway 迁移</li>
+                <li>Docker Compose 一键启动</li>
+                <li>REST / SSE 实时任务反馈</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="note reveal" style="margin-top: var(--space-6)">
+            <svg aria-hidden="true"><use href="#i-code"></use></svg>
+            <p>
+              本地开发与 Mock 环境、容器源码构建、镜像标签规则等细节，见仓库
+              <a
+                class="accent"
+                href="https://github.com/grayrepo-byte/Agenvas#本地开发"
+                target="_blank"
+                rel="noopener"
+                >README</a
+              >
+              与
+              <a
+                class="accent"
+                href="https://github.com/grayrepo-byte/Agenvas/blob/main/AGENTS.md"
+                target="_blank"
+                rel="noopener"
+                >开发约束</a
+              >。
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================= CTA ================= -->
+      <section class="section" id="cta">
+        <div class="container">
+          <div class="cta reveal">
+            <span class="eyebrow">开始使用</span>
+            <h2>把画布部署到你自己的服务器</h2>
+            <p class="lede">
+              MIT 许可，没有会员与用量门槛。仓库包含产品规格、开发清单、备份与恢复文档，
+              欢迎提交 Issue 与 Pull Request。
+            </p>
+            <div class="btn-row">
+              <a
+                class="btn btn--primary btn--lg"
+                href="https://github.com/grayrepo-byte/Agenvas"
+                target="_blank"
+                rel="noopener"
+              >
+                <svg width="19" height="19" aria-hidden="true">
+                  <use href="#i-github"></use>
+                </svg>
+                GitHub 仓库
+              </a>
+              <a
+                class="btn btn--ghost btn--lg"
+                href="https://github.com/grayrepo-byte/Agenvas/blob/main/docker-compose.yml"
+                target="_blank"
+                rel="noopener"
+              >
+                查看 docker-compose.yml
+              </a>
+            </div>
+            <p class="cta__meta">github.com/grayrepo-byte/Agenvas</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= Footer ================= -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__top">
+          <div class="footer__brand">
+            <a class="brand" href="#top">
+              <img
+                src="assets/img/agenvas-favicon.png"
+                alt=""
+                width="30"
+                height="30"
+              />
+              <span>Agenvas</span>
+            </a>
+            <p>
+              可自托管的 AI 创作画布。文字、图片、视频、音频与 Agent，一个工作空间。
+            </p>
+            <div class="footer__qr">
+              <img
+                src="assets/img/wechat-official-account.jpg"
+                alt="Agenvas 微信公众号二维码"
+                width="96"
+                height="96"
+                loading="lazy"
+              />
+              <span>扫码关注微信公众号<br />获取更新与使用帮助</span>
+            </div>
+          </div>
+
+          <div>
+            <h4>项目</h4>
+            <ul class="footer__links">
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas"
+                  target="_blank"
+                  rel="noopener"
+                  >GitHub 仓库</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/issues"
+                  target="_blank"
+                  rel="noopener"
+                  >Issues</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/releases"
+                  target="_blank"
+                  rel="noopener"
+                  >Releases</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/LICENSE"
+                  target="_blank"
+                  rel="noopener"
+                  >MIT 许可</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/README.en.md"
+                  target="_blank"
+                  rel="noopener"
+                  >English README</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>文档</h4>
+            <ul class="footer__links">
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/MVP-SPEC.md"
+                  target="_blank"
+                  rel="noopener"
+                  >产品规格</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/DEVELOPMENT-CHECKLIST.md"
+                  target="_blank"
+                  rel="noopener"
+                  >开发清单</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/operations/backup-restore.md"
+                  target="_blank"
+                  rel="noopener"
+                  >备份与恢复</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/operations/windows-install.md"
+                  target="_blank"
+                  rel="noopener"
+                  >Windows 安装指南</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/SECURITY.md"
+                  target="_blank"
+                  rel="noopener"
+                  >安全政策</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>联系</h4>
+            <ul class="footer__links">
+              <li>
+                <a
+                  href="https://x.com/Grayrepo"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  <span
+                    style="
+                      display: inline-flex;
+                      align-items: center;
+                      gap: 8px;
+                    "
+                  >
+                    <svg width="14" height="14" aria-hidden="true">
+                      <use href="#i-x"></use>
+                    </svg>
+                    X / Twitter @Grayrepo
+                  </span>
+                </a>
+              </li>
+              <li>
+                <a href="mailto:yoshioka8084806@gmail.com"
+                  >yoshioka8084806@gmail.com</a
+                >
+              </li>
+              <li>
+                <a
+                  href="https://hub.docker.com/u/grayrepo"
+                  target="_blank"
+                  rel="noopener"
+                  >Docker Hub / grayrepo</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <span>© 2026 Agenvas · MIT License</span>
+          <span>界面支持中文、英文、俄文与日文</span>
+          <a
+            class="spacer accent"
+            href="https://github.com/grayrepo-byte/Agenvas"
+            target="_blank"
+            rel="noopener"
+          >
+            github.com/grayrepo-byte/Agenvas
+          </a>
+        </div>
+      </div>
+    </footer>
+
+    <script src="assets/js/main.js" defer></script>
+  </body>
+</html>
