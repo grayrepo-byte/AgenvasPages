@@ -9,13 +9,27 @@
 ## 结构
 
 ```
-index.html                      单页站点
+index.html                      英文版单页站点（默认，站点根路径）
+zh/index.html                   中文版单页站点（/zh/ 路径）
 CNAME                           GitHub Pages 自定义域名
 assets/css/styles.css           设计令牌与全部样式
 assets/js/main.js               交互增强（滚动揭示、复制、标签页、画布连线、背景动效）
 assets/img/                     品牌图标与公众号二维码
 .nojekyll                       关闭 Jekyll 处理，直接发布静态文件
 ```
+
+## 多语言
+
+站点是两份独立的静态页面，通过导航栏的 EN / 中文 切换互相跳转，并用 `hreflang` 互相声明。
+
+| 语言 | 路径 | canonical |
+| --- | --- | --- |
+| 英文（默认） | `/` | `https://agenvas.com/` |
+| 中文 | `/zh/` | `https://agenvas.com/zh/` |
+
+两份页面共用 `assets/`，只有 HTML 不同。**改文案时两个文件都要改**——换来的是不依赖 JavaScript、两种语言都能被搜索引擎完整索引、切换不闪烁。
+
+`zh/index.html` 里的资源引用带 `../` 前缀，新增文件时留意。
 
 无构建步骤，无运行时依赖。修改后直接提交到 `main` 分支即可发布。
 

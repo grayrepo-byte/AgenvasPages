@@ -88,6 +88,13 @@
     Array.prototype.forEach.call(
       document.querySelectorAll("[data-copy]"),
       function (btn) {
+        var label = btn.querySelector("[data-copy-label]");
+        // Fall back to the markup's own wording so each language keeps its own copy
+        var idle = label ? label.textContent : "";
+        var copied = btn.getAttribute("data-copied-label") || "Copied";
+        var failed = btn.getAttribute("data-failed-label") || "Copy failed";
+        var resetTimer = null;
+
         btn.addEventListener("click", function () {
           var term = btn.closest(".term");
           var pre = term && term.querySelector("pre");
@@ -101,23 +108,23 @@
             }
           );
           var text = clone.textContent.replace(/\s+$/, "");
-          var label = btn.querySelector("[data-copy-label]");
 
           var flash = function (message) {
             if (label) label.textContent = message;
-            window.setTimeout(function () {
+            window.clearTimeout(resetTimer);
+            resetTimer = window.setTimeout(function () {
               btn.classList.remove("is-copied");
-              if (label) label.textContent = "Copy";
+              if (label) label.textContent = idle;
             }, 2000);
           };
 
           write(text).then(
             function () {
               btn.classList.add("is-copied");
-              flash("Copied");
+              flash(copied);
             },
             function () {
-              flash("Copy manually");
+              flash(failed);
             }
           );
         });
