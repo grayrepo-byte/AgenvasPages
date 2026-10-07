@@ -107,17 +107,17 @@
             if (label) label.textContent = message;
             window.setTimeout(function () {
               btn.classList.remove("is-copied");
-              if (label) label.textContent = "复制";
+              if (label) label.textContent = "Copy";
             }, 2000);
           };
 
           write(text).then(
             function () {
               btn.classList.add("is-copied");
-              flash("已复制");
+              flash("Copied");
             },
             function () {
-              flash("请手动复制");
+              flash("Copy manually");
             }
           );
         });

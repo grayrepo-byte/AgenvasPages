@@ -1,15 +1,15 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <script>
       document.documentElement.classList.add("js");
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Agenvas — 可自托管的 AI 创作画布</title>
+    <title>Agenvas — Self-hosted AI creation canvas</title>
     <meta
       name="description"
-      content="Agenvas 是开源的、可自托管的 AI 创作画布：文字、图片、视频、音频与 Agent 同处一个工作空间。一条命令完成部署，兼容 OpenAI 端点、ComfyUI 与 RunningHub，MIT 许可。"
+      content="Agenvas is an open-source, self-hosted canvas for AI creation: text, images, video, audio and agents in one workspace. Deploy with a single command. Works with OpenAI-compatible endpoints, ComfyUI and RunningHub. MIT licensed."
     />
     <meta name="theme-color" content="#0f172a" />
     <meta name="color-scheme" content="dark" />
@@ -17,10 +17,13 @@
 
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="Agenvas" />
-    <meta property="og:title" content="Agenvas — 可自托管的 AI 创作画布" />
+    <meta
+      property="og:title"
+      content="Agenvas — Self-hosted AI creation canvas"
+    />
     <meta
       property="og:description"
-      content="文字、图片、视频、音频与 Agent，同处一个无限画布。一条命令完成部署，MIT 许可，把创作成本的选择权留在自己手里。"
+      content="Text, images, video, audio and agents on one infinite canvas. Deploy with a single command, MIT licensed, and keep control of what you spend."
     />
     <meta property="og:url" content="https://agenvas.com/" />
     <meta
@@ -42,7 +45,7 @@
   </head>
 
   <body>
-    <a class="skip-link" href="#main">跳到主要内容</a>
+    <a class="skip-link" href="#main">Skip to main content</a>
 
     <!-- Icon sprite -->
     <svg
@@ -335,7 +338,7 @@
     </svg>
 
     <header class="nav" id="nav">
-      <nav class="nav__inner" aria-label="主导航">
+      <nav class="nav__inner" aria-label="Main">
         <a class="brand" href="#top">
           <img
             src="assets/img/agenvas-favicon.png"
@@ -346,10 +349,10 @@
           <span>Agenvas</span>
         </a>
         <div class="nav__links">
-          <a href="#preview">产品预览</a>
-          <a href="#features">核心功能</a>
-          <a href="#quickstart">快速开始</a>
-          <a href="#stack">技术栈</a>
+          <a href="#preview">Product</a>
+          <a href="#features">Features</a>
+          <a href="#quickstart">Quick start</a>
+          <a href="#stack">Stack</a>
         </div>
         <div class="nav__actions">
           <a
@@ -363,7 +366,7 @@
             </svg>
             GitHub
           </a>
-          <a class="btn btn--primary btn--sm" href="#quickstart">快速开始</a>
+          <a class="btn btn--primary btn--sm" href="#quickstart">Quick start</a>
         </div>
       </nav>
     </header>
@@ -376,14 +379,16 @@
           <div class="hero__head">
             <p class="hero__badge">
               <span class="dot" aria-hidden="true"></span>
-              MIT 开源 · 可自托管 · 单管理员部署
+              Open source · Self-hosted · Single-admin
             </p>
 
-            <h1>可自托管的<br /><span class="accent">AI 创作画布</span></h1>
+            <h1>Self-hosted<br /><span class="accent">AI creation canvas</span></h1>
 
             <p class="lede">
-              文字、图片、视频、音频与 Agent，同处一个无限画布。用最低的代价获得商业画布的体验
-              —— 不必绑定昂贵的会员，也不必追逐最顶尖的模型，把选择权留在自己手里。
+              Text, images, video, audio and agents share one infinite canvas.
+              Get the feel of a commercial canvas at the lowest possible cost —
+              no expensive subscription, and no need to chase the most
+              expensive models. The choice stays with you.
             </p>
 
             <div class="btn-row hero__cta">
@@ -396,10 +401,10 @@
                 <svg width="19" height="19" aria-hidden="true">
                   <use href="#i-github"></use>
                 </svg>
-                在 GitHub 上查看
+                View on GitHub
               </a>
               <a class="btn btn--ghost btn--lg" href="#quickstart">
-                一键部署
+                Quick start
                 <svg width="17" height="17" aria-hidden="true">
                   <use href="#i-arrow"></use>
                 </svg>
@@ -416,7 +421,7 @@
                   <svg width="12" height="12" aria-hidden="true">
                     <use href="#i-copy"></use>
                   </svg>
-                  <span data-copy-label>复制</span>
+                  <span data-copy-label>Copy</span>
                 </button>
               </div>
               <div class="term__body">
@@ -426,8 +431,10 @@
   docker compose up -d --wait</span></pre>
               </div>
               <p class="term__foot">
-                启动完成后打开 <code>http://127.0.0.1:8088/setup</code> 创建管理员账号。
-                数据库密码与凭证密钥首次启动时自动生成，无需填写。
+                When it is up, open <code>http://127.0.0.1:8088/setup</code> to
+                create the admin account. The database password and credential
+                key are generated automatically on first start — nothing to
+                fill in.
               </p>
             </div>
           </div>
@@ -435,19 +442,19 @@
           <ul class="facts facts--center">
             <li class="fact">
               <span class="fact__value">4</span>
-              <span class="fact__label">种界面语言</span>
+              <span class="fact__label">UI languages</span>
             </li>
             <li class="fact">
               <span class="fact__value">6</span>
-              <span class="fact__label">类媒体适配器</span>
+              <span class="fact__label">Media adapters</span>
             </li>
             <li class="fact">
               <span class="fact__value">1</span>
-              <span class="fact__label">条命令完成部署</span>
+              <span class="fact__label">Command to deploy</span>
             </li>
             <li class="fact">
               <span class="fact__value">MIT</span>
-              <span class="fact__label">开源许可</span>
+              <span class="fact__label">Open source licence</span>
             </li>
           </ul>
         </div>
@@ -457,25 +464,26 @@
       <section class="section section--tight" id="preview">
         <div class="container">
           <div class="section-head section-head--center">
-            <span class="eyebrow">产品预览</span>
-            <h2>一张画布，跑完整个创作流程</h2>
+            <span class="eyebrow">Product preview</span>
+            <h2>One canvas for the whole creative flow</h2>
             <p class="lede">
-              每个素材都是一张卡片。拖拽、框选、连线与自动整理，让文字、图片、视频、音频和
-              Agent 在同一张画布上互相引用。
+              Every asset is a card. Drag, box-select, connect and auto-arrange
+              — text, images, video, audio and agents all reference each other
+              on the same canvas.
             </p>
           </div>
 
           <div
             class="stage"
             role="img"
-            aria-label="Agenvas 画布界面示意：提示词卡片派生文字卡片与图片卡片，Agent 读取绑定上下文并提交媒体提案，经用户批准后生成音频与视频。卡片之间以连线互相引用。"
+            aria-label="Mock-up of the Agenvas canvas: a prompt card spawns a text card and an image card, an agent reads its bound context and submits media proposals, and approved proposals produce audio and video. Cards reference each other with connector lines."
           >
             <div class="stage__chrome" aria-hidden="true">
               <span class="term__dots">
                 <span></span><span></span><span></span>
               </span>
-              <span class="stage__title">画布 · 短剧项目</span>
-              <span class="stage__chip">自动整理已开启</span>
+              <span class="stage__title">Canvas · Short drama project</span>
+              <span class="stage__chip">Auto-arrange on</span>
             </div>
 
             <svg class="stage__links" id="stage-links" aria-hidden="true"></svg>
@@ -483,7 +491,7 @@
             <div class="node node--prompt">
               <div class="node__head">
                 <svg aria-hidden="true"><use href="#i-terminal"></use></svg>
-                <span class="node__name">提示词</span>
+                <span class="node__name">Prompt</span>
                 <span class="node__status" aria-hidden="true"></span>
               </div>
               <div class="node__body">
@@ -498,7 +506,7 @@
             <div class="node node--text">
               <div class="node__head">
                 <svg aria-hidden="true"><use href="#i-text"></use></svg>
-                <span class="node__name">文字卡片</span>
+                <span class="node__name">Text card</span>
                 <span class="node__status node__status--run" aria-hidden="true"></span>
               </div>
               <div class="node__body">
@@ -514,8 +522,8 @@
             <div class="node node--image">
               <div class="node__head">
                 <svg aria-hidden="true"><use href="#i-image"></use></svg>
-                <span class="node__name">图片卡片</span>
-                <span class="node__meta">· 2 个版本</span>
+                <span class="node__name">Image card</span>
+                <span class="node__meta">· 2 versions</span>
                 <span class="node__status" aria-hidden="true"></span>
               </div>
               <div class="node__body">
@@ -527,19 +535,20 @@
               <div class="node__head">
                 <svg aria-hidden="true"><use href="#i-agent"></use></svg>
                 <span class="node__name">Agent</span>
-                <span class="node__meta">· 已绑定上下文</span>
+                <span class="node__meta">· Context bound</span>
                 <span class="node__status node__status--run" aria-hidden="true"></span>
               </div>
               <div class="node__body">
                 <span class="bubble bubble--user"
-                  >把开场镜头改成黄昏，并配一段旁白。</span
+                  >Change the opening shot to dusk and add a voice-over.</span
                 >
                 <span class="bubble bubble--agent"
-                  >已准备 2 张图片与 1 段音频提案，等待你的批准。</span
+                  >2 image proposals and 1 audio track are ready. Waiting for
+                  your approval.</span
                 >
                 <div class="approve" aria-hidden="true">
-                  <span class="ok">批准</span>
-                  <span class="no">拒绝</span>
+                  <span class="ok">Approve</span>
+                  <span class="no">Reject</span>
                 </div>
               </div>
             </div>
@@ -547,7 +556,7 @@
             <div class="node node--audio">
               <div class="node__head">
                 <svg aria-hidden="true"><use href="#i-audio"></use></svg>
-                <span class="node__name">音频卡片</span>
+                <span class="node__name">Audio card</span>
                 <span class="node__status node__status--run" aria-hidden="true"></span>
               </div>
               <div class="node__body">
@@ -561,7 +570,7 @@
             <div class="node node--video">
               <div class="node__head">
                 <svg aria-hidden="true"><use href="#i-video"></use></svg>
-                <span class="node__name">视频卡片</span>
+                <span class="node__name">Video card</span>
                 <span class="node__status" aria-hidden="true"></span>
               </div>
               <div class="node__body">
@@ -573,7 +582,9 @@
           </div>
 
           <p class="stage-caption">
-            界面示意：提示词卡片派生文字与图片，Agent 读取绑定上下文并提交媒体提案，批准后生成音频与视频。
+            Interface mock-up: the prompt card spawns text and images, the agent
+            reads its bound context and submits media proposals, and approved
+            proposals produce audio and video.
           </p>
         </div>
       </section>
@@ -582,10 +593,11 @@
       <section class="section" id="features">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">核心功能</span>
-            <h2>从灵感到成品，画布承担全部环节</h2>
+            <span class="eyebrow">Core features</span>
+            <h2>From first idea to finished asset, all on the canvas</h2>
             <p class="lede">
-              生成、复用、编辑与审批都发生在同一张画布上，不需要在多个工具之间搬运素材。
+              Generation, reuse, editing and approval all happen on one canvas,
+              so you never shuttle assets between tools.
             </p>
           </div>
 
@@ -594,9 +606,10 @@
               <div class="card__icon">
                 <svg aria-hidden="true"><use href="#i-canvas"></use></svg>
               </div>
-              <h3>画布创作</h3>
+              <h3>Canvas creation</h3>
               <p>
-                拖拽、框选、连线与自动整理，支持上传本地媒体，卡片关系一目了然。
+                Drag, box-select, connect and auto-arrange. Upload local media
+                and see how every card relates at a glance.
               </p>
             </article>
 
@@ -604,9 +617,10 @@
               <div class="card__icon">
                 <svg aria-hidden="true"><use href="#i-layers"></use></svg>
               </div>
-              <h3>多模态生成</h3>
+              <h3>Multimodal generation</h3>
               <p>
-                文字、图片、视频、音频逐卡片运行，支持排队、取消、重新生成与历史版本。
+                Run text, image, video and audio per card, with queuing,
+                cancellation, regeneration and full version history.
               </p>
             </article>
 
@@ -614,9 +628,10 @@
               <div class="card__icon">
                 <svg aria-hidden="true"><use href="#i-agent"></use></svg>
               </div>
-              <h3>Agent 协作</h3>
+              <h3>Agent collaboration</h3>
               <p>
-                读取绑定上下文、编辑文字、摆放卡片；媒体生成提案经你批准后才执行。
+                The agent reads bound context, edits text and places cards.
+                Media proposals run only after you approve them.
               </p>
             </article>
 
@@ -624,9 +639,11 @@
               <div class="card__icon">
                 <svg aria-hidden="true"><use href="#i-plug"></use></svg>
               </div>
-              <h3>素材复用</h3>
+              <h3>Asset reuse</h3>
               <p>
-                项目资源、个人资产库、提示词模板、媒体风格与混合参考输入，一次沉淀处处可用。
+                Project resources, a personal asset library, prompt templates,
+                media styles and mixed reference inputs — saved once, reused
+                everywhere.
               </p>
             </article>
 
@@ -634,9 +651,10 @@
               <div class="card__icon">
                 <svg aria-hidden="true"><use href="#i-crop"></use></svg>
               </div>
-              <h3>图片处理</h3>
+              <h3>Image processing</h3>
               <p>
-                标注、裁剪、旋转、镜像、放大、深度提取，以及配置能力支持的 AI 编辑。
+                Annotate, crop, rotate, mirror, upscale and extract depth, plus
+                AI edits wherever the configured capability supports them.
               </p>
             </article>
 
@@ -644,9 +662,10 @@
               <div class="card__icon">
                 <svg aria-hidden="true"><use href="#i-server"></use></svg>
               </div>
-              <h3>自托管管理</h3>
+              <h3>Self-hosted administration</h3>
               <p>
-                模型配置、本地及 OSS / COS / S3 存储、任务与调用记录、项目清单导出。
+                Model configuration, local or OSS / COS / S3 storage, task and
+                call records, and project manifest export.
               </p>
             </article>
           </div>
@@ -657,26 +676,30 @@
       <section class="section" id="workflow">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">创作流程</span>
-            <h2>五种能力，落在同一套卡片上</h2>
+            <span class="eyebrow">Creative flow</span>
+            <h2>Five capabilities, one kind of card</h2>
             <p class="lede">
-              可用操作取决于管理员在后台发布的能力，界面支持中文、英文、俄文和日文。
+              What you can run depends on the capabilities your administrator
+              publishes. The interface ships in Chinese, English, Russian and
+              Japanese.
             </p>
           </div>
 
           <div class="modality reveal">
             <div class="modality__title">
               <svg aria-hidden="true"><use href="#i-text"></use></svg>
-              文字
+              Text
             </div>
             <div>
               <p>
-                接入任意 OpenAI 兼容端点，逐卡片生成与改写。结果可选用、可重新生成，历史版本随时回看。
+                Point it at any OpenAI-compatible endpoint and generate or
+                rewrite per card. Keep what you like, regenerate what you do
+                not, and revisit any earlier version.
               </p>
               <div class="tags">
-                <span class="tag tag--accent">OpenAI 兼容端点</span>
-                <span class="tag">自定义模型 ID</span>
-                <span class="tag">历史版本</span>
+                <span class="tag tag--accent">OpenAI-compatible endpoint</span>
+                <span class="tag">Custom model ID</span>
+                <span class="tag">Version history</span>
               </div>
             </div>
           </div>
@@ -684,17 +707,19 @@
           <div class="modality reveal">
             <div class="modality__title">
               <svg aria-hidden="true"><use href="#i-image"></use></svg>
-              图片
+              Image
             </div>
             <div>
               <p>
-                生成后可继续在画布内处理：标注、裁剪、旋转、镜像、放大与深度提取，也可以直接上传本地素材。
+                Keep working on an image inside the canvas: annotate, crop,
+                rotate, mirror, upscale and extract depth — or upload your own
+                media directly.
               </p>
               <div class="tags">
                 <span class="tag tag--accent">GPT Image</span>
                 <span class="tag tag--accent">Google Nano Banana</span>
-                <span class="tag">ComfyUI 工作流</span>
-                <span class="tag">混合参考输入</span>
+                <span class="tag">ComfyUI workflows</span>
+                <span class="tag">Mixed reference inputs</span>
               </div>
             </div>
           </div>
@@ -702,16 +727,19 @@
           <div class="modality reveal">
             <div class="modality__title">
               <svg aria-hidden="true"><use href="#i-video"></use></svg>
-              视频
+              Video
             </div>
             <div>
               <p>
-                以图片或文字为起点生成视频，支持参考媒体。结果未知（UNKNOWN）时需显式重试，避免误判为已完成。
+                Start from text or an image and generate video, with reference
+                media where you need it. Results in an unknown state must be
+                retried explicitly, so an unfinished job is never mistaken for
+                a finished one.
               </p>
               <div class="tags">
-                <span class="tag tag--accent">火山方舟 Seedance</span>
+                <span class="tag tag--accent">Volcano Ark Seedance</span>
                 <span class="tag tag--accent">RunningHub V2</span>
-                <span class="tag">媒体中继</span>
+                <span class="tag">Media relay</span>
               </div>
             </div>
           </div>
@@ -719,16 +747,18 @@
           <div class="modality reveal">
             <div class="modality__title">
               <svg aria-hidden="true"><use href="#i-audio"></use></svg>
-              音频
+              Audio
             </div>
             <div>
               <p>
-                语音与音效逐卡片生成，可直接引用画布上的文字与图片作为参考输入，与视频卡片组合使用。
+                Generate speech and sound effects card by card, referencing the
+                text and images already on the canvas, and pair them with video
+                cards.
               </p>
               <div class="tags">
                 <span class="tag tag--accent">Seed Audio</span>
-                <span class="tag">参考音频</span>
-                <span class="tag">逐卡片运行</span>
+                <span class="tag">Reference audio</span>
+                <span class="tag">Per-card runs</span>
               </div>
             </div>
           </div>
@@ -740,13 +770,16 @@
             </div>
             <div>
               <p>
-                读取绑定上下文、编辑文字、摆放卡片；媒体生成提案统一在对话中批准或拒绝。使用前管理员需运行工具调用诊断。
+                Reads bound context, edits text and places cards, and puts media
+                proposals in front of you to approve or reject in one place.
+                Administrators should run the tool-calling diagnostic before
+                using agents.
               </p>
               <div class="tags">
-                <span class="tag tag--accent">上下文绑定</span>
-                <span class="tag tag--accent">提案审批</span>
-                <span class="tag">Skill 配置</span>
-                <span class="tag">多轮对话</span>
+                <span class="tag tag--accent">Bound context</span>
+                <span class="tag tag--accent">Proposal approval</span>
+                <span class="tag">Skill configuration</span>
+                <span class="tag">Multi-turn</span>
               </div>
             </div>
           </div>
@@ -757,47 +790,48 @@
       <section class="section" id="integrations">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">生态对接</span>
-            <h2>用你手上的模型，跑你熟悉的流程</h2>
+            <span class="eyebrow">Integrations</span>
+            <h2>Bring your own models and workflows</h2>
             <p class="lede">
-              适配器与工作流都由管理员在后台发布，用户侧看到的可用操作与之保持一致。
+              Adapters and workflows are published by the administrator, so what
+              users see always matches what is actually available.
             </p>
           </div>
 
           <div class="stack-grid">
             <div class="stack-col reveal">
-              <h3>语言模型</h3>
+              <h3>Language models</h3>
               <ul>
-                <li>任意 OpenAI 兼容端点</li>
-                <li>自定义模型 ID 与 API Key</li>
-                <li>工具调用诊断，验证 Agent 可用性</li>
+                <li>Any OpenAI-compatible endpoint</li>
+                <li>Your own model IDs and API keys</li>
+                <li>Tool-calling diagnostic to verify agent readiness</li>
               </ul>
             </div>
 
             <div class="stack-col reveal" style="--delay: 60ms">
-              <h3>媒体适配器</h3>
+              <h3>Media adapters</h3>
               <ul>
-                <li>GPT Image · Google Nano Banana</li>
-                <li>火山方舟 Seedance · Seed Audio</li>
-                <li>媒体中继，支撑需要公网访问的参考素材</li>
+                <li>GPT Image and Google Nano Banana</li>
+                <li>Volcano Ark Seedance and Seed Audio</li>
+                <li>Media relay for references that need public access</li>
               </ul>
             </div>
 
             <div class="stack-col reveal" style="--delay: 120ms">
-              <h3>工作流引擎</h3>
+              <h3>Workflow engines</h3>
               <ul>
-                <li>ComfyUI：导入并映射已发布的 API 工作流</li>
-                <li>RunningHub V2 工作流与 AI 应用</li>
-                <li>可用操作随管理员发布的能力变化</li>
+                <li>ComfyUI: import and map published API workflows</li>
+                <li>RunningHub V2 workflows and AI apps</li>
+                <li>Available operations follow what you publish</li>
               </ul>
             </div>
 
             <div class="stack-col reveal">
-              <h3>存储与凭证</h3>
+              <h3>Storage and credentials</h3>
               <ul>
-                <li>本地存储，或对接 OSS / COS / S3</li>
-                <li>API Key 加密保存，密钥不写入日志</li>
-                <li>数据库密码与主密钥自动生成并持久化</li>
+                <li>Local storage, or OSS / COS / S3</li>
+                <li>API keys encrypted at rest and kept out of logs</li>
+                <li>Database password and master key generated and persisted</li>
               </ul>
             </div>
           </div>
@@ -808,11 +842,12 @@
       <section class="section" id="quickstart">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">快速开始</span>
-            <h2>三步，跑起你自己的画布</h2>
+            <span class="eyebrow">Quick start</span>
+            <h2>Three steps to your own canvas</h2>
             <p class="lede">
-              启动和登录无需 Git、本地编译环境、GPU、<code class="mono">.env</code>
-              或模型 Key。只需装好 Docker Engine / Docker Desktop，并确认包含 Docker Compose v2。
+              Starting up and signing in needs no Git, no local build toolchain,
+              no GPU, no <code class="mono">.env</code> and no model keys. You
+              only need Docker Engine or Docker Desktop with Docker Compose v2.
             </p>
           </div>
 
@@ -820,10 +855,10 @@
             <div class="step reveal">
               <div class="step__num" aria-hidden="true">01</div>
               <div>
-                <h3>一键启动</h3>
-                <p>选择你的系统，复制整段命令执行。</p>
+                <h3>Launch it</h3>
+                <p>Pick your platform and run the whole command as one paste.</p>
 
-                <div class="tabs" role="tablist" aria-label="选择操作系统">
+                <div class="tabs" role="tablist" aria-label="Choose your operating system">
                   <button
                     class="tab"
                     role="tab"
@@ -866,12 +901,12 @@
                     <span class="term__dots" aria-hidden="true">
                       <span></span><span></span><span></span>
                     </span>
-                    <span class="term__label">终端</span>
+                    <span class="term__label">Terminal</span>
                     <button class="term__copy" type="button" data-copy>
                       <svg width="12" height="12" aria-hidden="true">
                         <use href="#i-copy"></use>
                       </svg>
-                      <span data-copy-label>复制</span>
+                      <span data-copy-label>Copy</span>
                     </button>
                   </div>
                   <div class="term__body">
@@ -894,12 +929,12 @@
                     <span class="term__dots" aria-hidden="true">
                       <span></span><span></span><span></span>
                     </span>
-                    <span class="term__label">命令提示符</span>
+                    <span class="term__label">Command Prompt</span>
                     <button class="term__copy" type="button" data-copy>
                       <svg width="12" height="12" aria-hidden="true">
                         <use href="#i-copy"></use>
                       </svg>
-                      <span data-copy-label>复制</span>
+                      <span data-copy-label>Copy</span>
                     </button>
                   </div>
                   <div class="term__body">
@@ -926,7 +961,7 @@
                       <svg width="12" height="12" aria-hidden="true">
                         <use href="#i-copy"></use>
                       </svg>
-                      <span data-copy-label>复制</span>
+                      <span data-copy-label>Copy</span>
                     </button>
                   </div>
                   <div class="term__body">
@@ -945,8 +980,11 @@
                 <div class="note">
                   <svg aria-hidden="true"><use href="#i-alert"></use></svg>
                   <p>
-                    这一步会准备 <code class="mono">agenvas</code> 目录、拉取镜像，并等待
-                    Web、API 与 PostgreSQL 三个服务健康。首次下载镜像可能需要几分钟，请保留该目录以便后续维护。
+                    This prepares an <code class="mono">agenvas</code> directory,
+                    pulls the images and waits for the web, API and PostgreSQL
+                    services to become healthy. The first pull can take a few
+                    minutes. Keep the directory — you will run maintenance from
+                    it later.
                   </p>
                 </div>
               </div>
@@ -955,19 +993,23 @@
             <div class="step reveal">
               <div class="step__num" aria-hidden="true">02</div>
               <div>
-                <h3>创建管理员</h3>
+                <h3>Create the admin</h3>
                 <p>
-                  本机打开
+                  On the same machine, open
                   <a class="accent mono" href="http://127.0.0.1:8088/setup"
                     >http://127.0.0.1:8088/setup</a
-                  >；从其他设备访问时使用
-                  <code class="mono">http://&lt;服务器IP&gt;:8088/setup</code>。填写管理员登录名和密码后即可登录。
+                  >
+                  — from another device, use
+                  <code class="mono">http://&lt;server-ip&gt;:8088/setup</code>.
+                  Fill in an admin login and password, then sign in.
                 </p>
                 <div class="note">
                   <svg aria-hidden="true"><use href="#i-shield"></use></svg>
                   <p>
-                    初始化状态永久记录在数据库中，重启或停用管理员都不会重新开放。
-                    请先在受控网络完成初始化，再开放公网访问。
+                    Setup completion is recorded permanently in the database, so
+                    restarts or disabling the admin never reopen it. Finish
+                    setup on a controlled network before exposing the service to
+                    the internet.
                   </p>
                 </div>
               </div>
@@ -976,29 +1018,37 @@
             <div class="step reveal">
               <div class="step__num" aria-hidden="true">03</div>
               <div>
-                <h3>配置模型，开始创作</h3>
+                <h3>Configure models and start creating</h3>
                 <p>
-                  在「设置 → 模型配置」添加 OpenAI 兼容端点的模型 ID 与 API Key；
-                  在「媒体配置」创建连接、发布能力并设置默认模型。随后创建项目，通过画布右键菜单添加卡片或上传素材。
+                  Under “Settings → Model configuration”, add the endpoint, model
+                  ID and API key for your OpenAI-compatible provider. Under
+                  “Media configuration”, create connections, publish capabilities
+                  and set the default models. Then create a project and add cards
+                  or upload media from the canvas context menu.
                 </p>
                 <div class="term">
                   <div class="term__head">
                     <span class="term__dots" aria-hidden="true">
                       <span></span><span></span><span></span>
                     </span>
-                    <span class="term__label">日常维护</span>
+                    <span class="term__label">Everyday maintenance</span>
                   </div>
                   <div class="term__body">
-                    <pre><span class="prompt" aria-hidden="true">$ </span><span class="cmd">docker compose up -d --wait   <span class="term__label"># 启动或更新</span>
-docker compose ps             <span class="term__label"># 查看服务状态</span>
-docker compose down           <span class="term__label"># 停止并保留数据</span></span></pre>
+                    <pre><span class="prompt" aria-hidden="true">$ </span><span class="cmd">docker compose up -d --wait   <span class="term__label"># start or update</span>
+docker compose ps             <span class="term__label"># service status</span>
+docker compose down           <span class="term__label"># stop, keep data</span></span></pre>
                   </div>
                 </div>
                 <div class="note">
                   <svg aria-hidden="true"><use href="#i-alert"></use></svg>
                   <p>
-                    更新前请备份数据库、媒体、配置与加密密钥。
-                    <strong>不要执行 <code class="mono">docker compose down -v</code></strong>，它会删除数据和密钥。
+                    Back up the database, media, configuration and encryption key
+                    before updating.
+                    <strong
+                      >Do not run
+                      <code class="mono">docker compose down -v</code></strong
+                    >
+                    — it deletes your data and keys.
                   </p>
                 </div>
               </div>
@@ -1011,38 +1061,40 @@ docker compose down           <span class="term__label"># 停止并保留数据<
       <section class="section" id="stack">
         <div class="container">
           <div class="section-head">
-            <span class="eyebrow">技术栈</span>
-            <h2>常见的工具，透明的实现</h2>
+            <span class="eyebrow">Stack</span>
+            <h2>Familiar tools, transparent implementation</h2>
             <p class="lede">
-              工具链基线：JDK 21、Node 24 LTS（24.12+）、pnpm。完整版本见仓库的依赖基线文档。
+              Toolchain baseline: JDK 21, Node 24 LTS (24.12+) and pnpm. Exact
+              versions live in the dependency baseline document in the
+              repository.
             </p>
           </div>
 
           <div class="stack-grid">
             <div class="stack-col reveal">
-              <h3>前端</h3>
+              <h3>Frontend</h3>
               <ul>
                 <li>Vite · React · TypeScript</li>
-                <li>React Flow：画布与连线交互</li>
+                <li>React Flow for canvas and connector interaction</li>
                 <li>TanStack Query · Zustand</li>
               </ul>
             </div>
 
             <div class="stack-col reveal" style="--delay: 60ms">
-              <h3>后端</h3>
+              <h3>Backend</h3>
               <ul>
                 <li>Java 21 · Spring Boot</li>
-                <li>Spring AI：模型与 Agent 运行时</li>
-                <li>jOOQ：类型安全的数据库访问</li>
+                <li>Spring AI for model and agent runtime</li>
+                <li>jOOQ for type-safe database access</li>
               </ul>
             </div>
 
             <div class="stack-col reveal" style="--delay: 120ms">
-              <h3>数据与部署</h3>
+              <h3>Data and deployment</h3>
               <ul>
-                <li>PostgreSQL · Flyway 迁移</li>
-                <li>Docker Compose 一键启动</li>
-                <li>REST / SSE 实时任务反馈</li>
+                <li>PostgreSQL · Flyway migrations</li>
+                <li>Docker Compose for one-command startup</li>
+                <li>REST / SSE for live task feedback</li>
               </ul>
             </div>
           </div>
@@ -1050,22 +1102,23 @@ docker compose down           <span class="term__label"># 停止并保留数据<
           <div class="note reveal" style="margin-top: var(--space-6)">
             <svg aria-hidden="true"><use href="#i-code"></use></svg>
             <p>
-              本地开发与 Mock 环境、容器源码构建、镜像标签规则等细节，见仓库
+              Local development, the mock environment, container builds from
+              source and image tagging rules are covered in the repository
               <a
                 class="accent"
-                href="https://github.com/grayrepo-byte/Agenvas#本地开发"
+                href="https://github.com/grayrepo-byte/Agenvas#local-development"
                 target="_blank"
                 rel="noopener"
                 >README</a
               >
-              与
+              and
               <a
                 class="accent"
                 href="https://github.com/grayrepo-byte/Agenvas/blob/main/AGENTS.md"
                 target="_blank"
                 rel="noopener"
-                >开发约束</a
-              >。
+                >development constraints</a
+              >.
             </p>
           </div>
         </div>
@@ -1075,11 +1128,12 @@ docker compose down           <span class="term__label"># 停止并保留数据<
       <section class="section" id="cta">
         <div class="container">
           <div class="cta reveal">
-            <span class="eyebrow">开始使用</span>
-            <h2>把画布部署到你自己的服务器</h2>
+            <span class="eyebrow">Get started</span>
+            <h2>Deploy the canvas on your own server</h2>
             <p class="lede">
-              MIT 许可，没有会员与用量门槛。仓库包含产品规格、开发清单、备份与恢复文档，
-              欢迎提交 Issue 与 Pull Request。
+              MIT licensed, with no membership tiers and no usage threshold. The
+              repository ships the product spec, development checklist, and
+              backup and restore docs. Issues and pull requests are welcome.
             </p>
             <div class="btn-row">
               <a
@@ -1091,7 +1145,7 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                 <svg width="19" height="19" aria-hidden="true">
                   <use href="#i-github"></use>
                 </svg>
-                GitHub 仓库
+                GitHub repository
               </a>
               <a
                 class="btn btn--ghost btn--lg"
@@ -1099,7 +1153,7 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                 target="_blank"
                 rel="noopener"
               >
-                查看 docker-compose.yml
+                View docker-compose.yml
               </a>
             </div>
             <p class="cta__meta">github.com/grayrepo-byte/Agenvas</p>
@@ -1123,29 +1177,33 @@ docker compose down           <span class="term__label"># 停止并保留数据<
               <span>Agenvas</span>
             </a>
             <p>
-              可自托管的 AI 创作画布。文字、图片、视频、音频与 Agent，一个工作空间。
+              A self-hosted canvas for AI creation. Text, images, video, audio
+              and agents, in one workspace.
             </p>
             <div class="footer__qr">
               <img
                 src="assets/img/wechat-official-account.jpg"
-                alt="Agenvas 微信公众号二维码"
+                alt="QR code for the Agenvas WeChat official account"
                 width="96"
                 height="96"
                 loading="lazy"
               />
-              <span>扫码关注微信公众号<br />获取更新与使用帮助</span>
+              <span
+                >WeChat official account<br />Updates and help, in
+                Chinese</span
+              >
             </div>
           </div>
 
           <div>
-            <h4>项目</h4>
+            <h4>Project</h4>
             <ul class="footer__links">
               <li>
                 <a
                   href="https://github.com/grayrepo-byte/Agenvas"
                   target="_blank"
                   rel="noopener"
-                  >GitHub 仓库</a
+                  >GitHub repository</a
                 >
               </li>
               <li>
@@ -1169,29 +1227,29 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                   href="https://github.com/grayrepo-byte/Agenvas/blob/main/LICENSE"
                   target="_blank"
                   rel="noopener"
-                  >MIT 许可</a
+                  >MIT licence</a
                 >
               </li>
               <li>
                 <a
-                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/README.en.md"
+                  href="https://github.com/grayrepo-byte/Agenvas/blob/main/README.md"
                   target="_blank"
                   rel="noopener"
-                  >English README</a
+                  >README (Chinese)</a
                 >
               </li>
             </ul>
           </div>
 
           <div>
-            <h4>文档</h4>
+            <h4>Docs</h4>
             <ul class="footer__links">
               <li>
                 <a
                   href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/MVP-SPEC.md"
                   target="_blank"
                   rel="noopener"
-                  >产品规格</a
+                  >Product spec</a
                 >
               </li>
               <li>
@@ -1199,7 +1257,7 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                   href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/DEVELOPMENT-CHECKLIST.md"
                   target="_blank"
                   rel="noopener"
-                  >开发清单</a
+                  >Development checklist</a
                 >
               </li>
               <li>
@@ -1207,7 +1265,7 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                   href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/operations/backup-restore.md"
                   target="_blank"
                   rel="noopener"
-                  >备份与恢复</a
+                  >Backup and restore</a
                 >
               </li>
               <li>
@@ -1215,7 +1273,7 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                   href="https://github.com/grayrepo-byte/Agenvas/blob/main/docs/operations/windows-install.md"
                   target="_blank"
                   rel="noopener"
-                  >Windows 安装指南</a
+                  >Windows install guide</a
                 >
               </li>
               <li>
@@ -1223,27 +1281,19 @@ docker compose down           <span class="term__label"># 停止并保留数据<
                   href="https://github.com/grayrepo-byte/Agenvas/blob/main/SECURITY.md"
                   target="_blank"
                   rel="noopener"
-                  >安全政策</a
+                  >Security policy</a
                 >
               </li>
             </ul>
           </div>
 
           <div>
-            <h4>联系</h4>
+            <h4>Contact</h4>
             <ul class="footer__links">
               <li>
-                <a
-                  href="https://x.com/Grayrepo"
-                  target="_blank"
-                  rel="noopener"
-                >
+                <a href="https://x.com/Grayrepo" target="_blank" rel="noopener">
                   <span
-                    style="
-                      display: inline-flex;
-                      align-items: center;
-                      gap: 8px;
-                    "
+                    style="display: inline-flex; align-items: center; gap: 8px"
                   >
                     <svg width="14" height="14" aria-hidden="true">
                       <use href="#i-x"></use>
@@ -1271,7 +1321,7 @@ docker compose down           <span class="term__label"># 停止并保留数据<
 
         <div class="footer__bottom">
           <span>© 2026 Agenvas · MIT License</span>
-          <span>界面支持中文、英文、俄文与日文</span>
+          <span>Interface available in Chinese, English, Russian and Japanese</span>
           <a
             class="spacer accent"
             href="https://github.com/grayrepo-byte/Agenvas"
